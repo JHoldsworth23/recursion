@@ -16,7 +16,7 @@ function fibsRecursive(sequence) {
     } else {
         let array = fibsRecursive(sequence - 1);
         array.push(array[array.length - 1] + array[array.length - 2]);
-        return array;
+        return array.slice(0, sequence);
     }
 }
 
