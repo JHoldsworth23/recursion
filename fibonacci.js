@@ -1,14 +1,8 @@
 function fibs(sequence) {
-    let a = 0;
-    let b = 1;
-
-    let array = [a, b];
+    let array = [0, 1];
 
     for (let i = 2; i < sequence; i++) {
-        let c = a + b;
-        a = b;
-        b = c;
-        array.push(c);
+        array.push(array[i - 1] + array[i - 2]);
     }
 
     return array;
