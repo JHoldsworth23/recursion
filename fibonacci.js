@@ -9,3 +9,15 @@ function fibs(sequence) {
 }
 
 console.log(fibs(8));
+
+function fibsRecursive(sequence) {
+    if (sequence <= 1) {
+        return [0, 1];
+    } else {
+        let array = fibsRecursive(sequence - 1);
+        array.push(array[array.length - 1] + array[array.length - 2]);
+        return array;
+    }
+}
+
+console.log(fibsRecursive(8));
