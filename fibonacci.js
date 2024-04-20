@@ -10,14 +10,12 @@ function fibs(sequence) {
 
 console.log(fibs(8));
 
-function fibsRecursive(sequence) {
-    if (sequence <= 1) {
-        return [0, 1];
-    } else {
-        let array = fibsRecursive(sequence - 1);
-        array.push(array[array.length - 1] + array[array.length - 2]);
-        return array.slice(0, sequence);
-    }
+function fibsRecursive(n) {
+    if (n == 1) return [0];
+    if (n == 2) return [0, 1];
+
+    let array = fibsRecursive(n - 1);
+    return [...array, array[array.length - 1] + array[array.length - 2]];
 }
 
 console.log(fibsRecursive(8));
